@@ -11,31 +11,28 @@ import Dao from './pages/Dao';
 import Contact from './pages/Contact';
 import ParticleBackground from './components/shared/ParticleBackground';
 import ScrollToTop from './components/shared/ScrollToTop';
-import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
   return (
-    <ThemeProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <div className="relative min-h-screen flex flex-col bg-background-dark overflow-hidden">
-          <ParticleBackground />
-          <Navbar />
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/roadmap" element={<Roadmap />} />
-              <Route path="/tokenomics" element={<Tokenomics />} />
-              <Route path="/nft" element={<Nft />} />
-              <Route path="/dao" element={<Dao />} />
-              <Route path="/contact" element={<Contact />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </BrowserRouter>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="relative min-h-screen flex flex-col bg-background-dark overflow-hidden">
+        <ParticleBackground />
+        <Navbar />
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/tokenomics" element={<Tokenomics />} />
+            <Route path="/nft" element={<Nft />} />
+            <Route path="/dao" element={<Dao />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
