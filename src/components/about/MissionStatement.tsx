@@ -53,7 +53,7 @@ const MissionStatement: React.FC = () => {
           
           <AnimatedSection className="w-full lg:w-1/2 flex justify-center" direction="right">
             <img 
-              src="../../../public/profile_image.jpg"
+              src="https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/website/profile_image.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJ3ZWJzaXRlL3Byb2ZpbGVfaW1hZ2UuanBnIiwiaWF0IjoxNzQ4MTg1NjA1LCJleHAiOjE3Nzk3MjE2MDV9.ZRSTwXsMFcdNiUW_Hq_MXUKU6YDYePNIe3T4zURRiPA"
               alt="Crypto Trading"
               className="rounded-lg shadow-lg w-full max-w-md"
             />

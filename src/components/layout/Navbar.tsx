@@ -73,7 +73,11 @@ useEffect(() => {
     >
       <Container className="flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2 z-50">
-          <RatMascot size="sm" />
+          <img 
+            src="https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/website/Untitled-1%20copy.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJ3ZWJzaXRlL1VudGl0bGVkLTEgY29weS5wbmciLCJpYXQiOjE3NDgxOTMwMDAsImV4cCI6MTc3OTcyOTAwMH0.cDcMBIknU3tgeKPz21_MDoH8W2Q1G8zM0sNLFNexxuQ"
+            alt="SolRat Logo"
+            className="object-contain w-8 h-8"
+          />
           <span className="text-xl font-display font-bold gradient-text">SolRat</span>
         </Link>
         

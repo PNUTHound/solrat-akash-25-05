@@ -25,42 +25,42 @@ const NFTGallery: React.FC = () => {
     {
       id: 1,
       name: 'Cyber Rat #001',
-      image: 'https://images.pexels.com/photos/4097155/pexels-photo-4097155.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/website/May%2025,%202025,%2010_03_10%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJ3ZWJzaXRlL01heSAyNSwgMjAyNSwgMTBfMDNfMTAgQU0ucG5nIiwiaWF0IjoxNzQ4MTg1Nzc2LCJleHAiOjE3Nzk3MjE3NzZ9.thqKmTrX2gLpkcuxcDvu-PEsQWt1_OAa8iJRSrCAf4E',
       rarity: 'Legendary',
       traits: ['Laser Eyes', 'Cybernetic Implants', 'Holographic Aura']
     },
     {
       id: 2,
       name: 'Space Rat #042',
-      image: 'https://images.pexels.com/photos/3075993/pexels-photo-3075993.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_26_26%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzI2XzI2IEFNLnBuZyIsImlhdCI6MTc0ODE5MjgxNywiZXhwIjoxNzc5NzI4ODE3fQ.LqW6w03noKyb36uAR3Z2R_X6NyX2_rUXUtT8Z6Ir4u4',
       rarity: 'Epic',
       traits: ['Space Helmet', 'Lunar Boots', 'Cosmic Trail']
     },
     {
       id: 3,
       name: 'Hacker Rat #189',
-      image: 'https://images.pexels.com/photos/209151/pexels-photo-209151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_29_23%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzI5XzIzIEFNLnBuZyIsImlhdCI6MTc0ODE5Mjc4NSwiZXhwIjoxNzc5NzI4Nzg1fQ.hg1G1pZmht2pNUnFSbYqupJawFy9Qwr4WSx0r9tNJvs',
       rarity: 'Rare',
       traits: ['VR Headset', 'Mechanical Keyboard', 'Digital Aura']
     },
     {
       id: 4,
       name: 'Steampunk Rat #237',
-      image: 'https://images.pexels.com/photos/73873/star-clusters-rosette-nebula-star-galaxies-73873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_34_08%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzM0XzA4IEFNLnBuZyIsImlhdCI6MTc0ODE5Mjc1MCwiZXhwIjoxNzc5NzI4NzUwfQ.HQ8vG59869S3aA-2zgQTWEmia2GQnhNYMS0bwag2yjI',
       rarity: 'Epic',
       traits: ['Brass Goggles', 'Mechanical Arm', 'Steam Jetpack']
     },
     {
       id: 5,
       name: 'Warrior Rat #422',
-      image: 'https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_37_15%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzM3XzE1IEFNLnBuZyIsImlhdCI6MTc0ODE5MjcwNiwiZXhwIjoxNzc5NzI4NzA2fQ.hAJt76A6FUQauJfrm-EWcsPW4y103-cwouhlvCDgMdE',
       rarity: 'Uncommon',
       traits: ['Battle Armor', 'Energy Sword', 'War Paint']
     },
     {
       id: 6,
       name: 'Neon Rat #513',
-      image: 'https://images.pexels.com/photos/1906658/pexels-photo-1906658.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2011_05_33%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDExXzA1XzMzIEFNLnBuZyIsImlhdCI6MTc0ODE5MjY2OCwiZXhwIjoxNzc5NzI4NjY4fQ.qqjTnFxx_NcciQXsg3NHL61Y8XaMozYdkh4dgGQsRYY',
       rarity: 'Rare',
       traits: ['Neon Outline', 'Holographic Visor', 'Synthwave Background']
     }
