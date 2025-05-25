@@ -54,7 +54,7 @@ const MissionStatement: React.FC = () => {
             
             <AnimatedSection className="w-full lg:w-1/2 flex justify-center" direction="right">
               <img 
-                src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg"
+                src="../../../public/profile_image.jpg"
                 alt="Crypto Trading"
                 className="rounded-lg shadow-lg w-full max-w-md"
               />
