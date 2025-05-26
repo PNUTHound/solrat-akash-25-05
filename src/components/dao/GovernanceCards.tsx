@@ -148,7 +148,7 @@ const GovernanceCards: React.FC = () => {
         <AnimatedSection className="text-center">
           <div className="bg-gradient-to-r from-primary/20 to-accent/20 rounded-xl p-8 border border-primary/30">
             <h3 className="text-2xl font-bold gradient-text mb-4">Join the SolRat DAO</h3>
-            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+            <p className="text-lg text-text-muted max-w-2xl mx-auto">
               Participate in governance, shape the future of SolRat, and help build a thriving ecosystem on Solana.
             </p>
             <Button href="#" variant="primary" externalLink>
