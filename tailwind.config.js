@@ -1,29 +1,32 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class', // <--- Add this line for manual dark mode toggling
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#6C00FF',
-          light: '#8F33FF',
-          dark: '#5700CC'
+          DEFAULT: 'rgb(var(--color-primary))',
+          light: 'rgb(var(--color-primary-light))',
+          dark: 'rgb(var(--color-primary-dark))'
         },
         secondary: {
-          DEFAULT: '#000F24',
-          light: '#001A42',
-          dark: '#000913'
+          DEFAULT: 'rgb(var(--color-secondary))',
+          light: 'rgb(var(--color-secondary-light))',
+          dark: 'rgb(var(--color-secondary-dark))'
         },
         accent: {
-          DEFAULT: '#00C8FF',
-          light: '#33D4FF',
-          dark: '#00A0CC'
+          DEFAULT: 'rgb(var(--color-accent))',
+          light: 'rgb(var(--color-accent-light))',
+          dark: 'rgb(var(--color-accent-dark))'
         },
         background: {
-          DEFAULT: '#0A0A1A',
-          light: '#111132',
-          dark: '#05050F'
+          DEFAULT: 'rgb(var(--color-background))',
+          light: 'rgb(var(--color-background-light))',
+          dark: 'rgb(var(--color-background-dark))'
+        },
+        text: {
+          DEFAULT: 'rgb(var(--color-text))',
+          muted: 'rgb(var(--color-text-muted))'
         }
       },
       fontFamily: {
@@ -36,8 +39,8 @@ export default {
       },
       keyframes: {
         glow: {
-          '0%': { boxShadow: '0 0 5px rgba(108, 0, 255, 0.5), 0 0 10px rgba(0, 200, 255, 0.3)' },
-          '100%': { boxShadow: '0 0 10px rgba(108, 0, 255, 0.8), 0 0 20px rgba(0, 200, 255, 0.6)' }
+          '0%': { boxShadow: '0 0 5px rgba(var(--color-primary), 0.5), 0 0 10px rgba(var(--color-accent), 0.3)' },
+          '100%': { boxShadow: '0 0 10px rgba(var(--color-primary), 0.8), 0 0 20px rgba(var(--color-accent), 0.6)' }
         },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
@@ -46,7 +49,7 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-nebula': 'linear-gradient(to bottom right, #000F24, #0A0A1A, #100025)',
+        'gradient-nebula': 'linear-gradient(to bottom right, rgb(var(--color-secondary)), rgb(var(--color-background)), rgb(var(--color-background-dark)))',
       }
     },
   },

@@ -119,7 +119,7 @@ const NFTGallery: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             SolRat <span className="gradient-text">NFT Collection</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto">
             Exclusive digital collectibles with real utility in the SolRat ecosystem.
           </p>
         </AnimatedSection>
@@ -151,7 +151,7 @@ const NFTGallery: React.FC = () => {
                   <h3 className="text-xl font-bold mb-2">{nft.name}</h3>
                   
                   <div className="mb-4">
-                    <p className="text-sm text-white/60 mb-2">Traits:</p>
+                    <p className="text-sm text-text-muted max-w-2xl mx-auto">Traits:</p>
                     <div className="flex flex-wrap gap-2">
                       {nft.traits.map((trait, i) => (
                         <span 
@@ -192,14 +192,14 @@ const NFTGallery: React.FC = () => {
                 className="bg-secondary/60 rounded-xl p-6 hover:bg-secondary/80 transition-colors"
               >
                 <h4 className="text-xl font-semibold text-accent mb-3">{item.title}</h4>
-                <p className="text-white/70">{item.description}</p>
+                <p className="text-text-muted max-w-2xl mx-auto">{item.description}</p>
               </div>
             ))}
           </div>
           
           <div className="mt-8 bg-primary/10 rounded-xl p-6 border-l-4 border-primary">
             <h4 className="text-xl font-semibold gradient-text mb-3">Coming Soon: SolRat P2E Game</h4>
-            <p className="text-white/70 mb-4">
+            <p className="text-text-muted max-w-2xl mx-auto">
               Our upcoming play-to-earn game will allow NFT holders to battle, explore, and earn rewards in a fully immersive metaverse experience. Stay tuned for the beta launch in Q3 2025.
             </p>
             <Button href="#" variant="outline" externalLink className="mt-2">

@@ -36,7 +36,7 @@ const SolanaSection: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Built on <span className="gradient-text">Solana</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto">
             Experience the power of the fastest blockchain in the world.
           </p>
         </AnimatedSection>
@@ -55,7 +55,7 @@ const SolanaSection: React.FC = () => {
                   {feature.icon}
                   <h3 className="text-xl font-bold ml-3">{feature.title}</h3>
                 </div>
-                <p className="text-white/70">{feature.description}</p>
+                <p className="text-text-muted max-w-2xl mx-auto">{feature.description}</p>
               </motion.div>
             </AnimatedSection>
           ))}
@@ -75,16 +75,16 @@ const SolanaSection: React.FC = () => {
               Why <span className="gradient-text">Solana</span>?
             </h3>
             <div className="space-y-4 text-lg text-white/70">
-              <p>
+              <p className='text-lg text-text-muted max-w-2xl mx-auto'>
                 Solana is revolutionizing the blockchain space with its high-performance, 
                 low-cost infrastructure that enables the next generation of decentralized applications.
               </p>
-              <p>
+              <p className='text-lg text-text-muted max-w-2xl mx-auto'>
                 With its unique proof-of-history consensus mechanism and parallel processing 
                 capabilities, Solana can handle thousands of transactions per second while 
                 maintaining decentralization.
               </p>
-              <p>
+              <p className='text-lg text-text-muted max-w-2xl mx-auto'>
                 This makes it the perfect blockchain for SolRat to build its ecosystem, 
                 ensuring our community gets the best possible experience with minimal fees 
                 and maximum efficiency.

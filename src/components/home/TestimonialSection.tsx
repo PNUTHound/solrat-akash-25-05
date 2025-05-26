@@ -33,7 +33,7 @@ const TestimonialSection: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             What People Say About <span className="gradient-text">SolRat</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto">
             Hear from experts in the crypto industry about our project.
           </p>
         </AnimatedSection>
@@ -70,7 +70,7 @@ const TestimonialSection: React.FC = () => {
                   ))}
                 </div>
                 
-                <p className="text-white/70 italic">"{testimonial.content}"</p>
+                <p className="text-sm text-text-muted max-w-2xl mx-auto italic">"{testimonial.content}"</p>
               </motion.div>
             </AnimatedSection>
           ))}

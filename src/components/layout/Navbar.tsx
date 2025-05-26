@@ -1,30 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X,  Sun, Moon } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import Container from '../shared/Container';
 import RatMascot from '../shared/RatMascot';
+import ThemeToggle from '../shared/ThemeToggle';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
-  const [isDark, setIsDark] = useState(() => {
-  return localStorage.getItem('theme') === 'dark' ||
-    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
-});
-
-useEffect(() => {
-  const root = document.documentElement;
-  if (isDark) {
-    root.classList.add('dark');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    root.classList.remove('dark');
-    localStorage.setItem('theme', 'light');
-  }
-}, [isDark]);
   
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -57,7 +42,6 @@ useEffect(() => {
     };
   }, [isOpen]);
 
-  // Close menu when navigating
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
@@ -73,22 +57,17 @@ useEffect(() => {
     >
       <Container className="flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2 z-50">
-          <img 
-            src="https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/website/Untitled-1%20copy.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJ3ZWJzaXRlL1VudGl0bGVkLTEgY29weS5wbmciLCJpYXQiOjE3NDgxOTMwMDAsImV4cCI6MTc3OTcyOTAwMH0.cDcMBIknU3tgeKPz21_MDoH8W2Q1G8zM0sNLFNexxuQ"
-            alt="SolRat Logo"
-            className="object-contain w-8 h-8"
-          />
+          <img src="https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/website/Untitled-1%20copy.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJ3ZWJzaXRlL1VudGl0bGVkLTEgY29weS5wbmciLCJpYXQiOjE3NDgxOTMwMDAsImV4cCI6MTc3OTcyOTAwMH0.cDcMBIknU3tgeKPz21_MDoH8W2Q1G8zM0sNLFNexxuQ" alt="SolRat Logo" className="object-contain w-8 h-8" />
           <span className="text-xl font-display font-bold gradient-text">SolRat</span>
         </Link>
         
-        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={`relative font-medium transition-colors hover:text-accent ${
-                location.pathname === link.path ? 'text-accent' : 'text-white/80'
+                location.pathname === link.path ? 'text-accent' : 'text-text'
               }`}
             >
               {link.name}
@@ -103,25 +82,20 @@ useEffect(() => {
               )}
             </Link>
           ))}
+          <ThemeToggle />
         </nav>
-        <button
-          onClick={() => setIsDark(!isDark)}
-          className="hidden md:flex items-center justify-center text-white dark:text-black bg-accent p-2 rounded-full hover:bg-accent-light transition"
-          aria-label="Toggle theme"
-        >
-          {isDark ? <Sun size={20} /> : <Moon size={20} />}
-        </button>
         
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden z-50 text-white focus:outline-none"
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="z-50 text-text focus:outline-none"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
         
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -129,7 +103,7 @@ useEffect(() => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '100%' }}
               transition={{ type: 'tween', duration: 0.3 }}
-              className="fixed inset-0 bg-background-dark z-40 md:hidden flex flex-col"
+              className="fixed inset-0 bg-background z-40 md:hidden flex flex-col"
             >
               <Container className="flex flex-col items-center justify-center h-full">
                 <nav className="flex flex-col items-center space-y-6 text-center">
@@ -138,7 +112,7 @@ useEffect(() => {
                       key={link.path}
                       to={link.path}
                       className={`text-xl font-medium transition-colors hover:text-accent ${
-                        location.pathname === link.path ? 'text-accent' : 'text-white/80'
+                        location.pathname === link.path ? 'text-accent' : 'text-text'
                       }`}
                     >
                       {link.name}

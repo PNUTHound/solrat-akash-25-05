@@ -73,7 +73,7 @@ const TokenomicsChart: React.FC = () => {
         <div className="glassmorphism p-4 rounded-lg">
           <p className="font-bold">{payload[0].name}</p>
           <p className="text-accent">{`${payload[0].value}%`}</p>
-          <p className="text-sm text-white/70">{tokenAllocations.find(item => item.name === payload[0].name)?.description}</p>
+          <p className="text-sm text-text-muted max-w-2xl mx-auto">{tokenAllocations.find(item => item.name === payload[0].name)?.description}</p>
         </div>
       );
     }
@@ -87,7 +87,7 @@ const TokenomicsChart: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             <span className="gradient-text">Tokenomics</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto">
             A transparent breakdown of SolRat token distribution and utility.
           </p>
         </AnimatedSection>
@@ -128,8 +128,8 @@ const TokenomicsChart: React.FC = () => {
                   className="glassmorphism rounded-xl p-6 border-l-4 border-primary"
                 >
                   <h3 className="text-xl font-bold gradient-text mb-2">{detail.title}</h3>
-                  <div className="text-2xl font-bold text-white mb-2">{detail.value}</div>
-                  <p className="text-white/70">{detail.description}</p>
+                  <div className="text-2xl text-text-muted max-w-2xl mx-auto">{detail.value}</div>
+                  <p className="text-text-muted max-w-2xl mx-auto">{detail.description}</p>
                 </div>
               ))}
             </div>
@@ -142,32 +142,32 @@ const TokenomicsChart: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-secondary/60 rounded-xl p-6 hover:bg-secondary/80 transition-colors">
               <h4 className="text-xl font-semibold text-accent mb-3">Governance</h4>
-              <p className="text-white/70">Vote on key protocol decisions and shape the future of SolRat.</p>
+              <p className="text-text-muted max-w-2xl mx-auto">Vote on key protocol decisions and shape the future of SolRat.</p>
             </div>
             
             <div className="bg-secondary/60 rounded-xl p-6 hover:bg-secondary/80 transition-colors">
               <h4 className="text-xl font-semibold text-accent mb-3">Staking</h4>
-              <p className="text-white/70">Earn rewards by staking your tokens in the SolRat ecosystem.</p>
+              <p className="text-text-muted max-w-2xl mx-auto">Earn rewards by staking your tokens in the SolRat ecosystem.</p>
             </div>
             
             <div className="bg-secondary/60 rounded-xl p-6 hover:bg-secondary/80 transition-colors">
               <h4 className="text-xl font-semibold text-accent mb-3">NFT Access</h4>
-              <p className="text-white/70">Unlock exclusive NFTs and in-game assets with SolRat tokens.</p>
+              <p className="text-text-muted max-w-2xl mx-auto">Unlock exclusive NFTs and in-game assets with SolRat tokens.</p>
             </div>
             
             <div className="bg-secondary/60 rounded-xl p-6 hover:bg-secondary/80 transition-colors">
               <h4 className="text-xl font-semibold text-accent mb-3">Fee Discounts</h4>
-              <p className="text-white/70">Get reduced fees on all SolRat platform transactions.</p>
+              <p className="text-text-muted max-w-2xl mx-auto">Get reduced fees on all SolRat platform transactions.</p>
             </div>
             
             <div className="bg-secondary/60 rounded-xl p-6 hover:bg-secondary/80 transition-colors">
               <h4 className="text-xl font-semibold text-accent mb-3">Liquidity Mining</h4>
-              <p className="text-white/70">Provide liquidity and earn additional rewards in our pools.</p>
+              <p className="text-text-muted max-w-2xl mx-auto">Provide liquidity and earn additional rewards in our pools.</p>
             </div>
             
             <div className="bg-secondary/60 rounded-xl p-6 hover:bg-secondary/80 transition-colors">
               <h4 className="text-xl font-semibold text-accent mb-3">Platform Access</h4>
-              <p className="text-white/70">Access premium features and advanced tools in our ecosystem.</p>
+              <p className="text-text-muted max-w-2xl mx-auto">Access premium features and advanced tools in our ecosystem.</p>
             </div>
           </div>
         </AnimatedSection>

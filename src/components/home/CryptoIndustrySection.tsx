@@ -55,7 +55,7 @@ const CryptoIndustrySection: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             The Future of <span className="gradient-text">Crypto</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto">
             How SolRat is revolutionizing the meme coin landscape on Solana.
           </p>
         </AnimatedSection>
@@ -73,7 +73,7 @@ const CryptoIndustrySection: React.FC = () => {
                 <h3 className="text-2xl md:text-3xl font-bold gradient-text mb-2">
                   {stat.value}
                 </h3>
-                <p className="text-white/70">{stat.label}</p>
+                <p className="text-lg text-text-muted max-w-2xl mx-auto">{stat.label}</p>
               </motion.div>
             </AnimatedSection>
           ))}
@@ -85,13 +85,13 @@ const CryptoIndustrySection: React.FC = () => {
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
                 Meme Culture in <span className="gradient-text">Crypto</span>
               </h3>
-              <p className="text-lg text-white/70">
+              <p className="text-lg text-text-muted max-w-2xl mx-auto">
                 Meme coins have evolved from simple jokes to powerful communities 
                 driving real innovation in the crypto space. Solana's high-speed, 
                 low-cost infrastructure has become the perfect platform for the next 
                 generation of meme coins.
               </p>
-              <p className="text-lg text-white/70">
+              <p className="text-lg text-text-muted max-w-2xl mx-auto">
                 SolRat combines the viral nature of meme coins with genuine utility, 
                 creating a project that's both fun and functional. Our community-driven 
                 approach ensures that every holder has a voice in shaping the future 
@@ -119,7 +119,7 @@ const CryptoIndustrySection: React.FC = () => {
                     {feature.icon}
                     <h4 className="text-lg font-bold ml-2">{feature.title}</h4>
                   </div>
-                  <p className="text-white/70 text-sm">{feature.description}</p>
+                  <p className="text-sm text-text-muted max-w-2xl mx-auto">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -131,7 +131,7 @@ const CryptoIndustrySection: React.FC = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               Why <span className="gradient-text">SolRat</span> Will Win
             </h3>
-            <p className="text-lg text-white/70 mb-6 max-w-2xl mx-auto">
+            <p className="text-lg text-text-muted max-w-2xl mx-auto">
               With our unique combination of meme appeal, real utility, and strong 
               community governance, SolRat is positioned to become a leading force 
               in the Solana ecosystem. Join us as we redefine what's possible in 

@@ -14,7 +14,6 @@ const HeroSection: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas size
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -23,22 +22,18 @@ const HeroSection: React.FC = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Maze properties
     const gridSize = 20;
     const cellSize = Math.min(canvas.width, canvas.height) / gridSize;
     
-    // Rat properties
     let ratX = cellSize;
     let ratY = canvas.height / 2;
-    const ratSpeed = 2;
+    const ratSpeed = 1;
     let animationStarted = false;
     
-    // Draw city grid
     const drawCity = () => {
-      ctx.strokeStyle = 'rgba(108, 0, 255, 0.2)';
-      ctx.lineWidth = 1;
+      ctx.strokeStyle = 'rgba(var(--color-primary), 0.1)';
+      ctx.lineWidth = .5;
       
-      // Vertical lines
       for (let x = 0; x < canvas.width; x += cellSize) {
         ctx.beginPath();
         ctx.moveTo(x, 0);
@@ -46,7 +41,6 @@ const HeroSection: React.FC = () => {
         ctx.stroke();
       }
       
-      // Horizontal lines
       for (let y = 0; y < canvas.height; y += cellSize) {
         ctx.beginPath();
         ctx.moveTo(0, y);
@@ -54,8 +48,7 @@ const HeroSection: React.FC = () => {
         ctx.stroke();
       }
       
-      // Add some "buildings"
-      ctx.fillStyle = 'rgba(0, 200, 255, 0.1)';
+      ctx.fillStyle = 'rgba(var(--color-accent), 0.1)';
       for (let i = 0; i < 20; i++) {
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
@@ -64,18 +57,15 @@ const HeroSection: React.FC = () => {
       }
     };
     
-    // Draw rat
     const drawRat = () => {
       ctx.save();
       ctx.translate(ratX, ratY);
       
-      // Draw a simple rat silhouette
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.fillStyle = 'rgba(var(--color-text), 0.4)';
       ctx.beginPath();
       ctx.ellipse(0, 0, 20, 12, 0, 0, Math.PI * 2);
       ctx.fill();
       
-      // Draw tail
       ctx.beginPath();
       ctx.moveTo(-15, 0);
       ctx.quadraticCurveTo(-30, -10, -40, 0);
@@ -84,7 +74,6 @@ const HeroSection: React.FC = () => {
       ctx.restore();
     };
     
-    // Draw cheese
     const drawCheese = () => {
       ctx.save();
       ctx.translate(canvas.width - cellSize * 2, canvas.height / 2);
@@ -101,7 +90,6 @@ const HeroSection: React.FC = () => {
       ctx.restore();
     };
     
-    // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       drawCity();
@@ -115,7 +103,6 @@ const HeroSection: React.FC = () => {
       requestAnimationFrame(animate);
     };
     
-    // Start animation after 5 seconds
     setTimeout(() => {
       animationStarted = true;
     }, 5000);
@@ -143,11 +130,11 @@ const HeroSection: React.FC = () => {
           className="w-full md:w-1/2 text-center md:text-left"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-4">
-            <span className="block">Welcome to</span>
+            <span className="block text-text">Welcome to</span>
             <span className="gradient-text glow-text">SolRat</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-xl">
+          <p className="text-xl md:text-2xl text-text-muted mb-8 max-w-xl">
             Small but mighty in the Solana ecosystem.
           </p>
           
@@ -172,7 +159,7 @@ const HeroSection: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 2.2 }}
           className="w-full md:w-1/2 flex justify-center mt-12 md:mt-0"
         >
           <div className="relative">
@@ -181,9 +168,9 @@ const HeroSection: React.FC = () => {
               className="absolute inset-0 rounded-full"
               animate={{ 
                 boxShadow: [
-                  '0 0 40px rgba(108, 0, 255, 0.4)', 
-                  '0 0 80px rgba(0, 200, 255, 0.6)', 
-                  '0 0 40px rgba(108, 0, 255, 0.4)'
+                  '0 0 40px rgba(var(--color-primary), 0.4)', 
+                  '0 0 80px rgba(var(--color-accent), 0.6)', 
+                  '0 0 40px rgba(var(--color-primary), 0.4)'
                 ] 
               }}
               transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}

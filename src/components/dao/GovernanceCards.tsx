@@ -59,7 +59,7 @@ const GovernanceCards: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             <span className="gradient-text">DAO Governance</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto">
             SolRat is governed by its community through a decentralized autonomous organization.
           </p>
         </AnimatedSection>
@@ -79,7 +79,7 @@ const GovernanceCards: React.FC = () => {
                   {feature.icon}
                   <h3 className="text-xl font-bold ml-3 gradient-text">{feature.title}</h3>
                 </div>
-                <p className="text-white/70">{feature.description}</p>
+                <p className="text-text-muted max-w-2xl mx-auto">{feature.description}</p>
               </motion.div>
             </AnimatedSection>
           ))}
@@ -92,28 +92,28 @@ const GovernanceCards: React.FC = () => {
             <div className="space-y-6">
               <div className="bg-secondary/60 rounded-xl p-6">
                 <h4 className="text-xl font-semibold text-accent mb-3">1. Proposal Submission</h4>
-                <p className="text-white/70">
+                <p className="text-text-muted max-w-2xl mx-auto">
                   Any holder of at least 10,000 $SOLRAT tokens can submit a proposal to the DAO. Proposals can range from protocol upgrades to treasury allocations and partnership initiatives.
                 </p>
               </div>
               
               <div className="bg-secondary/60 rounded-xl p-6">
                 <h4 className="text-xl font-semibold text-accent mb-3">2. Discussion Period</h4>
-                <p className="text-white/70">
+                <p className="text-text-muted max-w-2xl mx-auto">
                   Each proposal undergoes a 3-day discussion period where community members can ask questions, suggest modifications, and signal their initial support or opposition.
                 </p>
               </div>
               
               <div className="bg-secondary/60 rounded-xl p-6">
                 <h4 className="text-xl font-semibold text-accent mb-3">3. Voting Phase</h4>
-                <p className="text-white/70">
+                <p className="text-text-muted max-w-2xl mx-auto">
                   After the discussion period, proposals enter a 5-day voting phase. All token holders can vote with voting power proportional to their holdings and holding duration.
                 </p>
               </div>
               
               <div className="bg-secondary/60 rounded-xl p-6">
                 <h4 className="text-xl font-semibold text-accent mb-3">4. Implementation</h4>
-                <p className="text-white/70">
+                <p className="text-text-muted max-w-2xl mx-auto">
                   If a proposal reaches quorum (30% of circulating supply) and a majority vote ({'>'} 50%), it is queued for implementation by the core development team.
                 </p>
               </div>
@@ -139,7 +139,7 @@ const GovernanceCards: React.FC = () => {
                   {mechanism.icon}
                   <h4 className="text-xl font-bold ml-3">{mechanism.title}</h4>
                 </div>
-                <p className="text-white/70">{mechanism.description}</p>
+                <p className="text-text-muted max-w-2xl mx-auto">{mechanism.description}</p>
               </motion.div>
             ))}
           </div>

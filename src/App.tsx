@@ -11,12 +11,15 @@ import Dao from './pages/Dao';
 import Contact from './pages/Contact';
 import ParticleBackground from './components/shared/ParticleBackground';
 import ScrollToTop from './components/shared/ScrollToTop';
+import { useTheme } from './components/hooks/useTheme';
 
 function App() {
+  useTheme(); // Initialize theme
+
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="relative min-h-screen flex flex-col bg-background-dark overflow-hidden">
+      <div className="relative min-h-screen flex flex-col bg-background overflow-hidden">
         <ParticleBackground />
         <Navbar />
         <main className="flex-grow">

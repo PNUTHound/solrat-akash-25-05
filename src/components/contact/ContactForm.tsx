@@ -6,10 +6,19 @@ import Container from '../shared/Container';
 import AnimatedSection from '../shared/AnimatedSection';
 import Button from '../shared/Button';
 
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('Missing Supabase environment variables');
+}
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    persistSession: true,
+    autoRefreshToken: true,
+  },
+});
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -32,32 +41,39 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
-
+    
     try {
-      const { data: userData } = await supabase.auth.getUser();
-      const user = userData?.user;
+      if (!supabaseUrl || !supabaseAnonKey) {
+        throw new Error('Supabase configuration is missing');
+      }
 
-      const payload = {
-        ...formData,
-        user_id: user ? user.id : null
-      };
-
-      const { error: supabaseError } = await supabase
+      const { error: supabaseError, data } = await supabase
         .from('contacts')
-        .insert([payload]);
-
-      if (supabaseError) throw supabaseError;
-
+        .insert([formData])
+        .select();
+      
+      if (supabaseError) {
+        throw supabaseError;
+      }
+      
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
     } catch (err) {
       console.error('Error submitting form:', err);
-      setError(err instanceof Error ? err.message : 'Submission failed.');
+      setError(
+        err instanceof Error 
+          ? err.message 
+          : 'Failed to submit form. Please try again.'
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
-
   
   const socialLinks = [
     {
@@ -84,7 +100,7 @@ const ContactForm: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Get in <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto">
             Have questions or want to join the SolRat community? Reach out to us.
           </p>
         </AnimatedSection>
@@ -97,21 +113,21 @@ const ContactForm: React.FC = () => {
               <div className="space-y-6 mb-8">
                 <div>
                   <h4 className="text-lg font-medium mb-2">Our Communities</h4>
-                  <p className="text-white/70">
+                  <p className="text-text-muted">
                     Join our active communities across various platforms to stay updated and connect with other SolRat enthusiasts.
                   </p>
                 </div>
                 
                 <div>
                   <h4 className="text-lg font-medium mb-2">Support</h4>
-                  <p className="text-white/70">
+                  <p className="text-text-muted">
                     Need help or have questions? Our support team is available 24/7 to assist you.
                   </p>
                 </div>
                 
                 <div>
                   <h4 className="text-lg font-medium mb-2">Partnerships</h4>
-                  <p className="text-white/70">
+                  <p className="text-text-muted">
                     Interested in partnering with SolRat? Contact our team to discuss potential collaborations.
                   </p>
                 </div>
@@ -126,7 +142,7 @@ const ContactForm: React.FC = () => {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 bg-secondary/60 hover:bg-secondary transition-colors px-4 py-3 rounded-lg"
+                      className="flex items-center gap-2 bg-secondary/60 hover:bg-secondary transition-colors px-4 py-3 rounded-lg text-text"
                       whileHover={{ y: -3 }}
                     >
                       {link.icon}
@@ -152,7 +168,7 @@ const ContactForm: React.FC = () => {
                     <Send size={32} className="text-accent" />
                   </div>
                   <h4 className="text-xl font-bold mb-2">Message Sent!</h4>
-                  <p className="text-white/80">Thank you for reaching out. We'll get back to you as soon as possible.</p>
+                  <p className="text-text-muted">Thank you for reaching out. We'll get back to you as soon as possible.</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -163,7 +179,7 @@ const ContactForm: React.FC = () => {
                   )}
                   
                   <div>
-                    <label htmlFor="name" className="block text-white/80 mb-2">Your Name</label>
+                    <label htmlFor="name" className="block text-text-muted mb-2">Your Name</label>
                     <input
                       type="text"
                       id="name"
@@ -171,13 +187,13 @@ const ContactForm: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-secondary/60 border border-primary/30 focus:border-accent focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-lg bg-secondary/60 border border-primary/30 focus:border-accent focus:outline-none transition-colors text-text"
                       placeholder="Enter your name"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-white/80 mb-2">Email Address</label>
+                    <label htmlFor="email" className="block text-text-muted mb-2">Email Address</label>
                     <input
                       type="email"
                       id="email"
@@ -185,20 +201,20 @@ const ContactForm: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-secondary/60 border border-primary/30 focus:border-accent focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-lg bg-secondary/60 border border-primary/30 focus:border-accent focus:outline-none transition-colors text-text"
                       placeholder="Enter your email"
                     />
                   </div>
                   
                   <div>
-                    <label htmlFor="subject" className="block text-white/80 mb-2">Subject</label>
+                    <label htmlFor="subject" className="block text-text-muted mb-2">Subject</label>
                     <select
                       id="subject"
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-secondary/60 border border-primary/30 focus:border-accent focus:outline-none transition-colors"
+                      className="w-full px-4 py-3 rounded-lg bg-secondary/60 border border-primary/30 focus:border-accent focus:outline-none transition-colors text-text"
                     >
                       <option value="">Select a subject</option>
                       <option value="General Inquiry">General Inquiry</option>
@@ -209,7 +225,7 @@ const ContactForm: React.FC = () => {
                   </div>
                   
                   <div>
-                    <label htmlFor="message" className="block text-white/80 mb-2">Message</label>
+                    <label htmlFor="message" className="block text-text-muted mb-2">Message</label>
                     <textarea
                       id="message"
                       name="message"
@@ -217,7 +233,7 @@ const ContactForm: React.FC = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 rounded-lg bg-secondary/60 border border-primary/30 focus:border-accent focus:outline-none transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-lg bg-secondary/60 border border-primary/30 focus:border-accent focus:outline-none transition-colors resize-none text-text"
                       placeholder="Type your message here..."
                     ></textarea>
                   </div>
@@ -229,7 +245,7 @@ const ContactForm: React.FC = () => {
                   >
                     {isSubmitting ? (
                       <>
-                        <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-text" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>

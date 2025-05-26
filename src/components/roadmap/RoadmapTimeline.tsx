@@ -82,7 +82,7 @@ const RoadmapTimeline: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Our <span className="gradient-text">Roadmap</span>
           </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
+          <p className="text-lg text-text-muted max-w-2xl mx-auto">
             The journey of SolRat from concept to dominance in the Solana ecosystem.
           </p>
         </AnimatedSection>
@@ -120,7 +120,7 @@ const RoadmapTimeline: React.FC = () => {
                       </span>
                     </div>
                     
-                    <p className="text-white/80 mb-4">{phase.description}</p>
+                    <p className="text-lg text-text-muted max-w-2xl mx-auto">{phase.description}</p>
                     
                     <ul className="space-y-2">
                       {phase.milestones.map((milestone, i) => (
@@ -128,7 +128,7 @@ const RoadmapTimeline: React.FC = () => {
                           <span className={`mr-2 mt-1 flex-shrink-0 w-4 h-4 rounded-full ${
                             phase.completed ? 'bg-accent' : 'bg-primary/50'
                           }`}></span>
-                          <span className="text-white/70">{milestone}</span>
+                          <span className="text-text-muted max-w-2xl mx-auto">{milestone}</span>
                         </li>
                       ))}
                     </ul>

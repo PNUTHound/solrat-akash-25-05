@@ -33,19 +33,19 @@ const MissionStatement: React.FC = () => {
               Our <span className="gradient-text">Mission</span>
             </h2>
             
-            <p className="text-lg text-white/80 mb-6">
+            <p className="text-lg text-text-muted mb-6">
               SolRat aims to revolutionize the Solana ecosystem by creating a fully decentralized, 
               community-driven platform that empowers users with innovative financial tools, NFT utility, 
               and governance mechanisms.
             </p>
             
-            <p className="text-lg text-white/80 mb-6">
+            <p className="text-lg text-text-muted mb-6">
               We are building a comprehensive ecosystem where token holders have real power, 
               where transactions are lightning-fast, and where the community decides the future 
               of the project through transparent DAO governance.
             </p>
             
-            <p className="text-lg text-white/80">
+            <p className="text-lg text-text-muted">
               By combining the best aspects of DeFi, NFTs, and community governance, 
               SolRat is positioned to become a cornerstone of the Solana blockchain.
             </p>
@@ -53,7 +53,7 @@ const MissionStatement: React.FC = () => {
           
           <AnimatedSection className="w-full lg:w-1/2 flex justify-center" direction="right">
             <img 
-              src="https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/website/profile_image.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJ3ZWJzaXRlL3Byb2ZpbGVfaW1hZ2UuanBnIiwiaWF0IjoxNzQ4MTg1NjA1LCJleHAiOjE3Nzk3MjE2MDV9.ZRSTwXsMFcdNiUW_Hq_MXUKU6YDYePNIe3T4zURRiPA"
+              src="https://images.pexels.com/photos/844124/pexels-photo-844124.jpeg"
               alt="Crypto Trading"
               className="rounded-lg shadow-lg w-full max-w-md"
             />
@@ -65,7 +65,7 @@ const MissionStatement: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
               The <span className="gradient-text">Symbolism</span> of the Rat
             </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            <p className="text-lg text-text-muted max-w-2xl mx-auto">
               The rat symbolizes important qualities that are core to our project's philosophy.
             </p>
           </AnimatedSection>
@@ -81,7 +81,7 @@ const MissionStatement: React.FC = () => {
                   whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(108, 0, 255, 0.2)' }}
                 >
                   <h3 className="text-xl font-bold mb-3 gradient-text">{item.title}</h3>
-                  <p className="text-white/70">{item.description}</p>
+                  <p className="text-text-muted">{item.description}</p>
                 </motion.div>
               </AnimatedSection>
             ))}
