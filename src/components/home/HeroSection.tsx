@@ -4,13 +4,22 @@ import Container from '../shared/Container';
 import Button from '../shared/Button';
 import RatMascot from '../shared/RatMascot';
 
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  radius: number;
+  color: string;
+}
+
 const HeroSection: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
@@ -22,92 +31,63 @@ const HeroSection: React.FC = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    const gridSize = 20;
-    const cellSize = Math.min(canvas.width, canvas.height) / gridSize;
-    
-    let ratX = cellSize;
-    let ratY = canvas.height / 2;
-    const ratSpeed = 1;
-    let animationStarted = false;
-    
-    const drawCity = () => {
-      ctx.strokeStyle = 'rgba(var(--color-primary), 0.1)';
-      ctx.lineWidth = .5;
-      
-      for (let x = 0; x < canvas.width; x += cellSize) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, canvas.height);
-        ctx.stroke();
-      }
-      
-      for (let y = 0; y < canvas.height; y += cellSize) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-        ctx.stroke();
-      }
-      
-      ctx.fillStyle = 'rgba(var(--color-accent), 0.1)';
-      for (let i = 0; i < 20; i++) {
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
-        const size = Math.random() * cellSize * 2 + cellSize;
-        ctx.fillRect(x, y, size, size);
-      }
-    };
-    
-    const drawRat = () => {
-      ctx.save();
-      ctx.translate(ratX, ratY);
-      
-      ctx.fillStyle = 'rgba(var(--color-text), 0.4)';
-      ctx.beginPath();
-      ctx.ellipse(0, 0, 20, 12, 0, 0, Math.PI * 2);
-      ctx.fill();
-      
-      ctx.beginPath();
-      ctx.moveTo(-15, 0);
-      ctx.quadraticCurveTo(-30, -10, -40, 0);
-      ctx.stroke();
-      
-      ctx.restore();
-    };
-    
-    const drawCheese = () => {
-      ctx.save();
-      ctx.translate(canvas.width - cellSize * 2, canvas.height / 2);
-      
-      ctx.fillStyle = 'rgba(255, 200, 0, 0.8)';
-      ctx.beginPath();
-      ctx.moveTo(0, -15);
-      ctx.lineTo(30, -15);
-      ctx.lineTo(30, 15);
-      ctx.lineTo(0, 15);
-      ctx.closePath();
-      ctx.fill();
-      
-      ctx.restore();
-    };
-    
-    const animate = () => {
+    const colors = [
+      '#14F195', '#9333EA', '#3B82F6', '#F59E0B', '#10B981'
+    ];
+
+    const particles: Particle[] = [];
+    const numParticles = 40;
+
+    for (let i = 0; i < numParticles; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 1,
+        vy: (Math.random() - 0.5) * 1,
+        radius: Math.random() * 2 + 2,
+        color: colors[Math.floor(Math.random() * colors.length)],
+      });
+    }
+
+    const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      drawCity();
-      drawCheese();
-      
-      if (animationStarted) {
-        ratX += ratSpeed;
-        drawRat();
+
+      // Draw lines between close particles
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 120) {
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
       }
-      
-      requestAnimationFrame(animate);
+
+      // Draw particles
+      for (let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+        p.x += p.vx;
+        p.y += p.vy;
+
+        // Bounce off edges
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      }
+
+      requestAnimationFrame(draw);
     };
-    
-    setTimeout(() => {
-      animationStarted = true;
-    }, 5000);
-    
-    animate();
+
+    draw();
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
@@ -119,9 +99,9 @@ const HeroSection: React.FC = () => {
       <canvas
         ref={canvasRef}
         className="absolute inset-0 z-0"
-        style={{ filter: 'blur(1px)' }}
+        style={{ filter: 'blur(0.8px)' }}
       />
-      
+
       <Container className="flex flex-col md:flex-row items-center justify-between py-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -133,11 +113,11 @@ const HeroSection: React.FC = () => {
             <span className="block text-text">Welcome to</span>
             <span className="gradient-text glow-text">SolRat</span>
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-text-muted mb-8 max-w-xl">
             Small but mighty in the Solana ecosystem.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button 
               href="https://pump.fun" 
@@ -146,7 +126,7 @@ const HeroSection: React.FC = () => {
             >
               Join $SOLRAT on Pump.fun
             </Button>
-            
+
             <Button 
               to="/about" 
               variant="outline"
@@ -155,7 +135,7 @@ const HeroSection: React.FC = () => {
             </Button>
           </div>
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
