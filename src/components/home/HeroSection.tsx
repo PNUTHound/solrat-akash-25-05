@@ -117,10 +117,13 @@ const HeroSection: React.FC = () => {
           <p className="text-xl md:text-2xl text-text-muted mb-8 max-w-xl">
             Small but mighty in the Solana ecosystem.
           </p>
+          <p className="text-xl md:text-1xl text-text-muted mb-8 max-w-xl">
+            CA:-4dPY9VD4J2zvebvY9bUwngmVNQewhwFEMKV8uQStpump.
+          </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button 
-              href="https://pump.fun" 
+              href="https://pump.fun/coin/4dPY9VD4J2zvebvY9bUwngmVNQewhwFEMKV8uQStpump" 
               variant="primary" 
               externalLink
             >

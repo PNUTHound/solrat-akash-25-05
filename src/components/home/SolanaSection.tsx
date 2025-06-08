@@ -49,13 +49,13 @@ const SolanaSection: React.FC = () => {
             >
               <motion.div 
                 className="glassmorphism rounded-xl p-6 h-full hover:border-primary/40 transition-all duration-300"
-                whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(108, 0, 255, 0.2)' }}
+                whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(var(--color-primary), 0.2)' }}
               >
                 <div className="flex items-center mb-4">
                   {feature.icon}
-                  <h3 className="text-xl font-bold ml-3">{feature.title}</h3>
+                  <h3 className="text-xl font-bold ml-3 text-text">{feature.title}</h3>
                 </div>
-                <p className="text-text-muted max-w-2xl mx-auto">{feature.description}</p>
+                <p className="text-text-muted">{feature.description}</p>
               </motion.div>
             </AnimatedSection>
           ))}
@@ -71,20 +71,20 @@ const SolanaSection: React.FC = () => {
           </div>
           
           <div className="w-full lg:w-1/2">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-text">
               Why <span className="gradient-text">Solana</span>?
             </h3>
-            <div className="space-y-4 text-lg text-white/70">
-              <p className='text-lg text-text-muted max-w-2xl mx-auto'>
+            <div className="space-y-4 text-lg text-text-muted">
+              <p>
                 Solana is revolutionizing the blockchain space with its high-performance, 
                 low-cost infrastructure that enables the next generation of decentralized applications.
               </p>
-              <p className='text-lg text-text-muted max-w-2xl mx-auto'>
+              <p>
                 With its unique proof-of-history consensus mechanism and parallel processing 
                 capabilities, Solana can handle thousands of transactions per second while 
                 maintaining decentralization.
               </p>
-              <p className='text-lg text-text-muted max-w-2xl mx-auto'>
+              <p>
                 This makes it the perfect blockchain for SolRat to build its ecosystem, 
                 ensuring our community gets the best possible experience with minimal fees 
                 and maximum efficiency.

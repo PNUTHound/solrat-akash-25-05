@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useTheme } from '../hooks/useTheme';
 
 interface Particle {
   x: number;
@@ -11,6 +12,7 @@ interface Particle {
 
 const ParticleBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
   
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -58,10 +60,12 @@ const ParticleBackground: React.FC = () => {
         if (particle.y < 0) particle.y = canvas.height;
         if (particle.y > canvas.height) particle.y = 0;
         
-        // Draw particle
+        // Draw particle with theme-aware colors
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(108, 0, 255, ${particle.opacity})`;
+        ctx.fillStyle = theme === 'light' 
+          ? `rgba(108, 0, 255, ${particle.opacity * 0.7})`
+          : `rgba(108, 0, 255, ${particle.opacity})`;
         ctx.fill();
       });
       
@@ -76,7 +80,9 @@ const ParticleBackground: React.FC = () => {
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0, 200, 255, ${0.1 * (1 - distance / 100)})`;
+            ctx.strokeStyle = theme === 'light'
+              ? `rgba(0, 200, 255, ${0.1 * (1 - distance / 100) * 0.7})`
+              : `rgba(0, 200, 255, ${0.1 * (1 - distance / 100)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -94,12 +100,13 @@ const ParticleBackground: React.FC = () => {
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [theme]);
   
   return (
     <canvas 
       ref={canvasRef}
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
+      style={{ opacity: theme === 'light' ? 0.7 : 1 }}
     />
   );
 };

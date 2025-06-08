@@ -68,12 +68,12 @@ const CryptoIndustrySection: React.FC = () => {
             >
               <motion.div 
                 className="glassmorphism rounded-xl p-6 text-center"
-                whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(108, 0, 255, 0.2)' }}
+                whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(var(--color-primary), 0.2)' }}
               >
                 <h3 className="text-2xl md:text-3xl font-bold gradient-text mb-2">
                   {stat.value}
                 </h3>
-                <p className="text-lg text-text-muted max-w-2xl mx-auto">{stat.label}</p>
+                <p className="text-text-muted">{stat.label}</p>
               </motion.div>
             </AnimatedSection>
           ))}
@@ -82,16 +82,16 @@ const CryptoIndustrySection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           <AnimatedSection direction="left">
             <div className="space-y-6">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-text">
                 Meme Culture in <span className="gradient-text">Crypto</span>
               </h3>
-              <p className="text-lg text-text-muted max-w-2xl mx-auto">
+              <p className="text-lg text-text-muted">
                 Meme coins have evolved from simple jokes to powerful communities 
                 driving real innovation in the crypto space. Solana's high-speed, 
                 low-cost infrastructure has become the perfect platform for the next 
                 generation of meme coins.
               </p>
-              <p className="text-lg text-text-muted max-w-2xl mx-auto">
+              <p className="text-lg text-text-muted">
                 SolRat combines the viral nature of meme coins with genuine utility, 
                 creating a project that's both fun and functional. Our community-driven 
                 approach ensures that every holder has a voice in shaping the future 
@@ -113,13 +113,13 @@ const CryptoIndustrySection: React.FC = () => {
                 <motion.div 
                   key={index}
                   className="glassmorphism rounded-xl p-4"
-                  whileHover={{ y: -3, boxShadow: '0 10px 30px rgba(108, 0, 255, 0.2)' }}
+                  whileHover={{ y: -3, boxShadow: '0 10px 30px rgba(var(--color-primary), 0.2)' }}
                 >
                   <div className="flex items-center mb-3">
                     {feature.icon}
-                    <h4 className="text-lg font-bold ml-2">{feature.title}</h4>
+                    <h4 className="text-lg font-bold ml-2 text-text">{feature.title}</h4>
                   </div>
-                  <p className="text-sm text-text-muted max-w-2xl mx-auto">{feature.description}</p>
+                  <p className="text-text-muted text-sm">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -128,10 +128,10 @@ const CryptoIndustrySection: React.FC = () => {
 
         <AnimatedSection className="text-center">
           <div className="glassmorphism rounded-xl p-8 border border-accent/30">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 text-text">
               Why <span className="gradient-text">SolRat</span> Will Win
             </h3>
-            <p className="text-lg text-text-muted max-w-2xl mx-auto">
+            <p className="text-lg text-text-muted mb-6 max-w-2xl mx-auto">
               With our unique combination of meme appeal, real utility, and strong 
               community governance, SolRat is positioned to become a leading force 
               in the Solana ecosystem. Join us as we redefine what's possible in 
