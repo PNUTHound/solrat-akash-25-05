@@ -25,42 +25,42 @@ const NFTGallery: React.FC = () => {
     {
       id: 1,
       name: 'Cyber Rat #001',
-      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/website/May%2025,%202025,%2010_03_10%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJ3ZWJzaXRlL01heSAyNSwgMjAyNSwgMTBfMDNfMTAgQU0ucG5nIiwiaWF0IjoxNzQ4MTg1Nzc2LCJleHAiOjE3Nzk3MjE3NzZ9.thqKmTrX2gLpkcuxcDvu-PEsQWt1_OAa8iJRSrCAf4E',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/May%2025,%202025,%2010_03_10%20AM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kMTAwYzdhOS1lODdhLTQzNzItYmMyOS02NDQ1YTFmOTgyYTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJuZnQvTWF5IDI1LCAyMDI1LCAxMF8wM18xMCBBTS5wbmciLCJpYXQiOjE3NDk0NTczOTMsImV4cCI6MTc4MDk5MzM5M30.rB1b4Y9peoW9aGCvbKB7GKa9e-VB1h64mN5XHKpAVnw',
       rarity: 'Legendary',
       traits: ['Laser Eyes', 'Cybernetic Implants', 'Holographic Aura']
     },
     {
       id: 2,
       name: 'Space Rat #042',
-      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_26_26%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzI2XzI2IEFNLnBuZyIsImlhdCI6MTc0ODE5MjgxNywiZXhwIjoxNzc5NzI4ODE3fQ.LqW6w03noKyb36uAR3Z2R_X6NyX2_rUXUtT8Z6Ir4u4',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_26_26%20AM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kMTAwYzdhOS1lODdhLTQzNzItYmMyOS02NDQ1YTFmOTgyYTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzI2XzI2IEFNLnBuZyIsImlhdCI6MTc0OTQ1NjY4OSwiZXhwIjoxNzgwOTkyNjg5fQ.PKZ2CgJGKuUztKJjKvfgfVZsrae2FJvi1NTjPiLzPPA',
       rarity: 'Epic',
       traits: ['Space Helmet', 'Lunar Boots', 'Cosmic Trail']
     },
     {
       id: 3,
       name: 'Hacker Rat #189',
-      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_29_23%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzI5XzIzIEFNLnBuZyIsImlhdCI6MTc0ODE5Mjc4NSwiZXhwIjoxNzc5NzI4Nzg1fQ.hg1G1pZmht2pNUnFSbYqupJawFy9Qwr4WSx0r9tNJvs',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_29_23%20AM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kMTAwYzdhOS1lODdhLTQzNzItYmMyOS02NDQ1YTFmOTgyYTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzI5XzIzIEFNLnBuZyIsImlhdCI6MTc0OTQ1NjczMSwiZXhwIjoxNzgwOTkyNzMxfQ.21VSP9XbcZrUUIyxw1nnFdIvrMRBjl_Z_jNXof9FZSU',
       rarity: 'Rare',
       traits: ['VR Headset', 'Mechanical Keyboard', 'Digital Aura']
     },
     {
       id: 4,
       name: 'Steampunk Rat #237',
-      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_34_08%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzM0XzA4IEFNLnBuZyIsImlhdCI6MTc0ODE5Mjc1MCwiZXhwIjoxNzc5NzI4NzUwfQ.HQ8vG59869S3aA-2zgQTWEmia2GQnhNYMS0bwag2yjI',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_34_08%20AM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kMTAwYzdhOS1lODdhLTQzNzItYmMyOS02NDQ1YTFmOTgyYTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzM0XzA4IEFNLnBuZyIsImlhdCI6MTc0OTQ1Njc3MiwiZXhwIjoxNzgwOTkyNzcyfQ.eSPHnMyPqjFcF2pWXTMwlfXLqEyRa4ZwN3wpOhr-CV4',
       rarity: 'Epic',
       traits: ['Brass Goggles', 'Mechanical Arm', 'Steam Jetpack']
     },
     {
       id: 5,
       name: 'Warrior Rat #422',
-      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_37_15%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzM3XzE1IEFNLnBuZyIsImlhdCI6MTc0ODE5MjcwNiwiZXhwIjoxNzc5NzI4NzA2fQ.hAJt76A6FUQauJfrm-EWcsPW4y103-cwouhlvCDgMdE',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2010_37_15%20AM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kMTAwYzdhOS1lODdhLTQzNzItYmMyOS02NDQ1YTFmOTgyYTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDEwXzM3XzE1IEFNLnBuZyIsImlhdCI6MTc0OTQ1NjgyNCwiZXhwIjoxNzgwOTkyODI0fQ.drZoWnQieLQ0a09CMIxSZqazt19ITFvAP00FTUzXaes',
       rarity: 'Uncommon',
       traits: ['Battle Armor', 'Energy Sword', 'War Paint']
     },
     {
       id: 6,
       name: 'Neon Rat #513',
-      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2011_05_33%20AM.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InN0b3JhZ2UtdXJsLXNpZ25pbmcta2V5XzBhMjc5OTA0LWQ0MTItNDdlZi04MWVlLWZmNDQxZGU2MGRkMyJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDExXzA1XzMzIEFNLnBuZyIsImlhdCI6MTc0ODE5MjY2OCwiZXhwIjoxNzc5NzI4NjY4fQ.qqjTnFxx_NcciQXsg3NHL61Y8XaMozYdkh4dgGQsRYY',
+      image: 'https://wxdvyyxizkynrektzvfx.supabase.co/storage/v1/object/sign/nft/ChatGPT%20Image%20May%2025,%202025,%2011_05_33%20AM.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9kMTAwYzdhOS1lODdhLTQzNzItYmMyOS02NDQ1YTFmOTgyYTQiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJuZnQvQ2hhdEdQVCBJbWFnZSBNYXkgMjUsIDIwMjUsIDExXzA1XzMzIEFNLnBuZyIsImlhdCI6MTc0OTQ1Njg1OSwiZXhwIjoxNzgwOTkyODU5fQ.SZIZKqzSPFd-v5MtPD3YYzfZOVg0r1GQfzcKmuNb5Zo',
       rarity: 'Rare',
       traits: ['Neon Outline', 'Holographic Visor', 'Synthwave Background']
     }
