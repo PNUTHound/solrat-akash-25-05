@@ -56,8 +56,8 @@ const Navbar: React.FC = () => {
       }`}
     >
       <Container className="flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2 z-50">
-          <img src="/public/Untitled-1 copy.png" alt="SolRat Logo" className="object-contain w-10 h-10" />
+        <Link to="/" className="flex items-center space-x-2 mb-4">
+          <RatMascot size="sm" animated={false} />
           <span className="text-xl font-display font-bold gradient-text">SolRat</span>
         </Link>
         

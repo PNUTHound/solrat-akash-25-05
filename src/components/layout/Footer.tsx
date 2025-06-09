@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <img src="/public/Untitled-1 copy.png" alt="SolRat Logo" className="object-contain w-10 h-10" />
+              <RatMascot size="sm" animated={false} />
               <span className="text-xl font-display font-bold gradient-text">SolRat</span>
             </Link>
             <p className="text-text-muted mb-4">
